@@ -1,0 +1,14 @@
+body {
+    background-color: #000000;
+}
+
+#clock {
+    padding: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+#hour {
+    color: #ffffff;
+    font-size: 10rem;
+}
