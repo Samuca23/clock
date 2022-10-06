@@ -23,6 +23,9 @@ class Clock {
         if (parseInt(iSecond) < 10) {
             iSecond = '0' + iSecond;
         }
+        if (parseInt(iMinute) < 10) {
+            iMinute = '0' + iMinute;
+        }
 
         let sDateFormat = iHour + ':' + iMinute + ':' + iSecond;
         return sDateFormat;
