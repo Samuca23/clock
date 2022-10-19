@@ -105,10 +105,6 @@ class Clock {
         return document.getElementById('container');
     }
 
-    createButtonBackgroundColo = () {
-        
-    }
-
     /**
      * Função para criar div.
      * 
