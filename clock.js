@@ -8,6 +8,11 @@ class Clock {
         }, 1000);
     }
 
+    /**
+     * Obtem a Hora atual;
+     * 
+     * @returns string
+     */
     getHourNow = () => {
         let oDate = new Date();
 
@@ -15,6 +20,12 @@ class Clock {
         return sDateFormat;
     }
 
+    /**
+     * Formata a hora, adicionando o '0'.
+     * 
+     * @param {object Date} oDate 
+     * @returns string
+     */
     formatHour = (oDate) => {
         let iHour = oDate.getHours();
         let iMinute = oDate.getMinutes();
@@ -31,6 +42,9 @@ class Clock {
         return sDateFormat;
     }
 
+    /**
+     * Cria o layout do relógio
+     */
     createLayoutClock = () => {
         let oDivContainer = this.getContainer();
 
@@ -43,15 +57,30 @@ class Clock {
         oDivClock.appendChild(oSpanHour);
     }
 
+    /**
+     * Adiciona a hora no elemento span
+     */
     addHourLayout = () => {
         let oSpanHour = document.getElementById('hour');
         oSpanHour.innerText = this.getHourNow();
     }
     
+    /**
+     * Retorna a div container
+     * 
+     * @returns element
+     */
     getContainer = () => {
         return document.getElementById('container');
     }
 
+    /**
+     * Função para criar div.
+     * 
+     * @param {string} sId 
+     * @param {string} sClass 
+     * @returns 
+     */
     createDiv = (sId, sClass) => {
         let oDiv = document.createElement('div');
         oDiv.setAttribute('id', sId);
@@ -60,6 +89,13 @@ class Clock {
         return oDiv;
     }
 
+    /**
+     * Função para criar span.
+     * 
+     * @param {string} sId 
+     * @param {string} sClass 
+     * @returns 
+     */
     createSpan = (sId, sClass) => {
         let oSpan = document.createElement('span');
         oSpan.setAttribute('id', sId);
