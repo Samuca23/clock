@@ -13,8 +13,12 @@ class Clock {
      * 
      * @returns string
      */
-    getHourNow = () => {
+    getHourNow = (bRetunDate = false) => {
         let oDate = new Date();
+        
+        if (bRetunDate) {
+            return oDate;
+        }
 
         let sDateFormat = this.formatHour(oDate);
         return sDateFormat;
@@ -55,6 +59,33 @@ class Clock {
         oSpanHour.setAttribute('class', 'hour');
         oSpanHour.setAttribute('id', 'hour');
         oDivClock.appendChild(oSpanHour);
+
+        let oDivDate = this.createDiv('date', 'date');
+        oDivDate.innerText = this.getDate();
+        oDivClock.appendChild(oDivDate);
+    }
+
+    /**
+     * Pega a data
+     * 
+     * @returns string
+     */
+    getDate = () => {
+        let oDate = this.getHourNow(true);
+        let sDateFormat = this.formatDate(oDate.getDate(), oDate.getMonth(), oDate.getFullYear());
+        return sDateFormat;
+    }
+
+    /**
+     * Formata a data
+     * 
+     * @param {string} sDay 
+     * @param {string} sMonth 
+     * @param {string} sYear 
+     * @returns 
+     */
+    formatDate = (sDay, sMonth, sYear) => {
+        return sDay +'/' +  parseInt(sMonth + 1) + '/' + sYear;
     }
 
     /**
@@ -72,6 +103,10 @@ class Clock {
      */
     getContainer = () => {
         return document.getElementById('container');
+    }
+
+    createButtonBackgroundColo = () {
+        
     }
 
     /**
